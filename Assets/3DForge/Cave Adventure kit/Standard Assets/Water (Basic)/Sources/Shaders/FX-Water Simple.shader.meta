@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9dccc8e8f0da4494991c26ef59019551
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8317
+  packageName: Cave Adventure Kit
+  packageVersion: 2.0
+  assetPath: Assets/3DForge/Cave Adventure kit/Standard Assets/Water (Basic)/Sources/Shaders/FX-Water
+    Simple.shader
+  uploadId: 370372
