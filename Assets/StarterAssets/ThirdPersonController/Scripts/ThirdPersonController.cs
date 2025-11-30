@@ -47,6 +47,8 @@ namespace StarterAssets
         public float FallTimeout = 0.15f;
 
         [Header("Player Grounded")]
+        public bool dialogue = false;
+
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
         public bool Grounded = true;
 
@@ -156,15 +158,27 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
+            // If dialogue is active → block movement & rotation
+            if (dialogue)
+            {
+                _animator.SetFloat(_animIDSpeed, 0);
+                _animator.SetFloat(_animIDMotionSpeed, 0);
+                return;   // stop Update() here
+            }
+
+            // Normal movement
             JumpAndGravity();
             GroundedCheck();
             Move();
         }
 
+
         private void LateUpdate()
         {
+            if (dialogue) return;  // stop camera rotation during dialogue
             CameraRotation();
         }
+
 
         private void AssignAnimationIDs()
         {
